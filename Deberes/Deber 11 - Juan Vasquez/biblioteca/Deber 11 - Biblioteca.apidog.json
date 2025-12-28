@@ -1,0 +1,634 @@
+{
+  "apidogProject": "1.0.0",
+  "$schema": {
+    "app": "apidog",
+    "type": "project",
+    "version": "1.2.0"
+  },
+  "info": {
+    "name": "Deber 11 - Biblioteca",
+    "description": "",
+    "mockRule": {
+      "rules": [],
+      "enableSystemRule": true
+    }
+  },
+  "projectSetting": {
+    "id": "1164430",
+    "auth": {},
+    "securityScheme": {},
+    "gateway": [],
+    "language": "es-ES",
+    "apiStatuses": [
+      "developing",
+      "testing",
+      "released",
+      "deprecated"
+    ],
+    "mockSettings": {},
+    "preProcessors": [],
+    "postProcessors": [],
+    "advancedSettings": {
+      "enableJsonc": false,
+      "enableBigint": false,
+      "responseValidate": true,
+      "enableTestScenarioSetting": false,
+      "enableYAPICompatScript": false,
+      "isDefaultUrlEncoding": 3,
+      "publishedDocUrlRules": {
+        "defaultRule": "SLUGIFY_WITH_RESOURCE_KEY",
+        "resourceKeyStandard": "NEW"
+      }
+    },
+    "initialDisabledMockIds": [],
+    "servers": [
+      {
+        "id": "default",
+        "name": "Servidor predeterminado",
+        "moduleId": 1024283
+      }
+    ],
+    "cloudMock": {
+      "security": "free",
+      "enable": false,
+      "tokenKey": "apidogToken"
+    }
+  },
+  "apiCollection": [
+    {
+      "name": "Root",
+      "id": 6047321,
+      "auth": {},
+      "securityScheme": {},
+      "parentId": 0,
+      "serverId": "",
+      "description": "",
+      "identityPattern": {
+        "httpApi": {
+          "type": "methodAndPath",
+          "bodyType": "",
+          "fields": []
+        }
+      },
+      "shareSettings": {},
+      "visibility": "SHARED",
+      "moduleId": 1024283,
+      "preProcessors": [
+        {
+          "id": "inheritProcessors",
+          "type": "inheritProcessors",
+          "data": {}
+        }
+      ],
+      "postProcessors": [
+        {
+          "id": "inheritProcessors",
+          "type": "inheritProcessors",
+          "data": {}
+        }
+      ],
+      "inheritPostProcessors": {},
+      "inheritPreProcessors": {},
+      "items": [
+        {
+          "name": "Listar todos los Libros",
+          "api": {
+            "id": "26075907",
+            "method": "get",
+            "path": "http://localhost:8080/libros",
+            "parameters": {},
+            "auth": {},
+            "securityScheme": {},
+            "commonParameters": {
+              "query": [],
+              "body": [],
+              "cookie": [],
+              "header": []
+            },
+            "responses": [
+              {
+                "id": "159010289",
+                "code": 200,
+                "name": "Éxito",
+                "jsonSchema": {
+                  "type": "object",
+                  "properties": {}
+                },
+                "contentType": "json"
+              }
+            ],
+            "responseExamples": [
+              {
+                "name": "Correcto",
+                "data": "[{\"id\":1,\"isbn\":\"123-45\",\"titulo\":\"Cien Años de Soledad\",\"autor\":\"Gabriel Garcia Marquez\",\"anioPublicacion\":1967,\"disponible\":true},{\"id\":2,\"isbn\":\"678-90\",\"titulo\":\"El Principito\",\"autor\":\"Antoine de Saint-Exupéry\",\"anioPublicacion\":1943,\"disponible\":true},{\"id\":3,\"isbn\":\"111-22\",\"titulo\":\"Crónica de una muerte anunciada\",\"autor\":\"Gabriel Garcia Marquez\",\"anioPublicacion\":1981,\"disponible\":true}]",
+                "responseId": "159010289"
+              },
+              {
+                "name": "Correcto",
+                "data": "[{\"id\":1,\"isbn\":\"123-45\",\"titulo\":\"Cien Años de Soledad\",\"autor\":\"Gabriel Garcia Marquez\",\"anioPublicacion\":1967,\"disponible\":true},{\"id\":2,\"isbn\":\"678-90\",\"titulo\":\"El Principito\",\"autor\":\"Antoine de Saint-Exupéry\",\"anioPublicacion\":1943,\"disponible\":true},{\"id\":3,\"isbn\":\"111-22\",\"titulo\":\"Crónica de una muerte anunciada\",\"autor\":\"Gabriel Garcia Marquez\",\"anioPublicacion\":1981,\"disponible\":true}]",
+                "responseId": "159010289"
+              }
+            ],
+            "requestBody": {
+              "type": "none",
+              "parameters": [],
+              "required": true,
+              "mediaType": "",
+              "examples": [],
+              "oasExtensions": ""
+            },
+            "description": "",
+            "tags": [],
+            "status": "developing",
+            "serverId": "",
+            "operationId": "",
+            "sourceUrl": "",
+            "ordering": 10,
+            "cases": [],
+            "mocks": [],
+            "customApiFields": "{}",
+            "advancedSettings": {
+              "disabledSystemHeaders": {}
+            },
+            "mockScript": {},
+            "codeSamples": [],
+            "commonResponseStatus": {},
+            "responseChildren": [],
+            "visibility": "INHERITED",
+            "moduleId": 1024283,
+            "oasExtensions": "",
+            "type": "http",
+            "preProcessors": [],
+            "postProcessors": [],
+            "inheritPostProcessors": {},
+            "inheritPreProcessors": {}
+          }
+        },
+        {
+          "name": "Buscar libro por ID",
+          "api": {
+            "id": "26075910",
+            "method": "get",
+            "path": "http://localhost:8080/libros/1",
+            "parameters": {},
+            "auth": {},
+            "securityScheme": {},
+            "commonParameters": {
+              "query": [],
+              "body": [],
+              "cookie": [],
+              "header": []
+            },
+            "responses": [
+              {
+                "id": "132996881",
+                "code": 200,
+                "name": "Correcto",
+                "jsonSchema": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "integer"
+                    },
+                    "isbn": {
+                      "type": "string"
+                    },
+                    "titulo": {
+                      "type": "string"
+                    },
+                    "autor": {
+                      "type": "string"
+                    },
+                    "anioPublicacion": {
+                      "type": "integer"
+                    },
+                    "disponible": {
+                      "type": "boolean"
+                    }
+                  },
+                  "required": [
+                    "id",
+                    "isbn",
+                    "titulo",
+                    "autor",
+                    "anioPublicacion",
+                    "disponible"
+                  ]
+                },
+                "contentType": "json"
+              }
+            ],
+            "responseExamples": [],
+            "requestBody": {
+              "type": "none",
+              "parameters": [],
+              "required": true,
+              "mediaType": "",
+              "examples": [],
+              "oasExtensions": ""
+            },
+            "description": "",
+            "tags": [],
+            "status": "developing",
+            "serverId": "",
+            "operationId": "",
+            "sourceUrl": "",
+            "ordering": 20,
+            "cases": [],
+            "mocks": [],
+            "customApiFields": "{}",
+            "advancedSettings": {
+              "disabledSystemHeaders": {}
+            },
+            "mockScript": {},
+            "codeSamples": [],
+            "commonResponseStatus": {},
+            "responseChildren": [],
+            "visibility": "INHERITED",
+            "moduleId": 1024283,
+            "oasExtensions": "",
+            "type": "http",
+            "preProcessors": [],
+            "postProcessors": [],
+            "inheritPostProcessors": {},
+            "inheritPreProcessors": {}
+          }
+        },
+        {
+          "name": "Crear libro",
+          "api": {
+            "id": "26075939",
+            "method": "post",
+            "path": "http://localhost:8080/libros",
+            "parameters": {},
+            "auth": {},
+            "securityScheme": {},
+            "commonParameters": {
+              "query": [],
+              "body": [],
+              "cookie": [],
+              "header": []
+            },
+            "responses": [
+              {
+                "id": "131324344",
+                "code": 200,
+                "name": "Éxito",
+                "jsonSchema": {
+                  "type": "object",
+                  "properties": {}
+                },
+                "contentType": "json"
+              }
+            ],
+            "responseExamples": [
+              {
+                "name": "Creado",
+                "data": "{\"id\":4,\"isbn\":\"999-88\",\"titulo\":\"Harry Potter y la Piedra Filosofal\",\"autor\":\"J.K. Rowling\",\"anioPublicacion\":1997,\"disponible\":true}",
+                "responseId": "131324344"
+              }
+            ],
+            "requestBody": {
+              "type": "application/json",
+              "parameters": [],
+              "jsonSchema": {
+                "type": "object",
+                "properties": {}
+              },
+              "required": true,
+              "mediaType": "",
+              "examples": [
+                {
+                  "mediaType": "application/json",
+                  "value": "{\r\n  \"isbn\": \"999-88\",\r\n  \"titulo\": \"Harry Potter y la Piedra Filosofal\",\r\n  \"autor\": \"J.K. Rowling\",\r\n  \"anioPublicacion\": 1997,\r\n  \"disponible\": true\r\n}"
+                }
+              ],
+              "oasExtensions": ""
+            },
+            "description": "",
+            "tags": [],
+            "status": "developing",
+            "serverId": "",
+            "operationId": "",
+            "sourceUrl": "",
+            "ordering": 30,
+            "cases": [],
+            "mocks": [],
+            "customApiFields": "{}",
+            "advancedSettings": {
+              "disabledSystemHeaders": {}
+            },
+            "mockScript": {},
+            "codeSamples": [],
+            "commonResponseStatus": {},
+            "responseChildren": [],
+            "visibility": "INHERITED",
+            "moduleId": 1024283,
+            "oasExtensions": "",
+            "type": "http",
+            "preProcessors": [],
+            "postProcessors": [],
+            "inheritPostProcessors": {},
+            "inheritPreProcessors": {}
+          }
+        },
+        {
+          "name": "Buscar por filtro",
+          "api": {
+            "id": "26075940",
+            "method": "get",
+            "path": "http://localhost:8080/libros/buscar",
+            "parameters": {
+              "query": [
+                {
+                  "required": false,
+                  "description": "",
+                  "type": "string",
+                  "id": "YX2JdBFfiT",
+                  "enable": true,
+                  "name": "autor",
+                  "example": "Gabriel Garcia Marquez"
+                },
+                {
+                  "required": false,
+                  "description": "",
+                  "type": "string",
+                  "id": "Rnl3fh4yxK",
+                  "enable": true,
+                  "name": "anio",
+                  "example": "1967"
+                }
+              ]
+            },
+            "auth": {},
+            "securityScheme": {},
+            "commonParameters": {
+              "query": [],
+              "body": [],
+              "cookie": [],
+              "header": []
+            },
+            "responses": [
+              {
+                "id": "154857560",
+                "code": 200,
+                "name": "Éxito",
+                "jsonSchema": {
+                  "type": "object",
+                  "properties": {}
+                },
+                "contentType": "json"
+              }
+            ],
+            "responseExamples": [
+              {
+                "name": "Correcto",
+                "data": "[{\"id\":1,\"isbn\":\"123-45\",\"titulo\":\"Cien Años de Soledad\",\"autor\":\"Gabriel Garcia Marquez\",\"anioPublicacion\":1967,\"disponible\":true}]",
+                "responseId": "154857560"
+              }
+            ],
+            "requestBody": {
+              "type": "none",
+              "parameters": [],
+              "required": true,
+              "mediaType": "",
+              "examples": [],
+              "oasExtensions": ""
+            },
+            "description": "",
+            "tags": [],
+            "status": "developing",
+            "serverId": "",
+            "operationId": "",
+            "sourceUrl": "",
+            "ordering": 40,
+            "cases": [],
+            "mocks": [],
+            "customApiFields": "{}",
+            "advancedSettings": {
+              "disabledSystemHeaders": {}
+            },
+            "mockScript": {},
+            "codeSamples": [],
+            "commonResponseStatus": {},
+            "responseChildren": [],
+            "visibility": "INHERITED",
+            "moduleId": 1024283,
+            "oasExtensions": "",
+            "type": "http",
+            "preProcessors": [],
+            "postProcessors": [],
+            "inheritPostProcessors": {},
+            "inheritPreProcessors": {}
+          }
+        }
+      ]
+    }
+  ],
+  "socketCollection": [],
+  "docCollection": [],
+  "webSocketCollection": [],
+  "socketIOCollection": [],
+  "responseCollection": [],
+  "schemaCollection": [],
+  "securitySchemeCollection": [],
+  "requestCollection": [
+    {
+      "name": "Root",
+      "children": [],
+      "ordering": [
+        "requestFolder.9105117"
+      ],
+      "items": []
+    }
+  ],
+  "environments": [],
+  "commonScripts": [],
+  "globalVariables": [],
+  "commonParameters": null,
+  "customFunctions": [],
+  "projectTestCaseCategories": [
+    {
+      "id": 721793,
+      "name": "Positivo",
+      "description": "Entradas válidas y resultados esperados correctos, que representan un uso típico."
+    },
+    {
+      "id": 721794,
+      "name": "Negativo",
+      "description": "Entradas negativas o no válidas, como campos faltantes, tipos incorrectos, métodos no admitidos, etc."
+    },
+    {
+      "id": 721795,
+      "name": "Límite",
+      "description": "Condiciones extremas o de borde, como longitud máxima de cadena, valores vacíos, cero, null, etc."
+    },
+    {
+      "id": 721796,
+      "name": "Seguridad",
+      "description": "Casos que pueden exponer riesgos de seguridad del API."
+    },
+    {
+      "id": 721797,
+      "name": "Otros",
+      "description": "Casos no clasificados en categorías existentes."
+    }
+  ],
+  "projectTestCaseTags": [
+    {
+      "id": 2276131,
+      "name": "Solo campos obligatorios",
+      "description": "Enviar solo los campos obligatorios con valores válidos, omitiendo todos los opcionales, para probar la solicitud mínima válida."
+    },
+    {
+      "id": 2276132,
+      "name": "Semántica válida",
+      "description": "Usar valores sintácticamente correctos que también tengan sentido en la lógica de negocio o el contexto del dominio."
+    },
+    {
+      "id": 2276133,
+      "name": "Cobertura de combinaciones de enum",
+      "description": "Para todos los parámetros de tipo enumeración, aplicar diseño ortogonal para construir sistemáticamente combinaciones de casos de prueba de parámetros y sus valores de enum, con el fin de cubrir los enums."
+    },
+    {
+      "id": 2276134,
+      "name": "Otros casos positivos",
+      "description": "Proporcionar entradas realistas y válidas que cumplan la especificación del API, produciendo el resultado correcto y esperado."
+    },
+    {
+      "id": 2276135,
+      "name": "Campos obligatorios ausentes",
+      "description": "Omitir uno o más campos obligatorios en el cuerpo o parámetros de la solicitud."
+    },
+    {
+      "id": 2276136,
+      "name": "Valores no válidos",
+      "description": "Proporcionar valores con tipo y formato correctos, pero lógicamente no válidos para el campo."
+    },
+    {
+      "id": 2276137,
+      "name": "Errores de tipo",
+      "description": "Usar valores con tipos de datos incorrectos, como enviar una cadena en lugar de un entero."
+    },
+    {
+      "id": 2276138,
+      "name": "Errores de formato",
+      "description": "Proporcionar valores con un formato incorrecto, p. ej., patrón de fecha erróneo, dirección de correo mal formada."
+    },
+    {
+      "id": 2276139,
+      "name": "Errores semánticos",
+      "description": "Usar valores sintáctica y formalmente correctos que sean lógicamente imposibles o violen reglas del dominio."
+    },
+    {
+      "id": 2276140,
+      "name": "Otros casos negativos",
+      "description": "Proporcionar entradas inválidas o inesperadas que deberían activar el manejo de errores o el rechazo por parte del API."
+    },
+    {
+      "id": 2276141,
+      "name": "Nulo",
+      "description": "Debe ser el literal JSON `null` (no vacío, no \"null\")."
+    },
+    {
+      "id": 2276142,
+      "name": "Cero",
+      "description": "Debe ser el literal numérico 0."
+    },
+    {
+      "id": 2276143,
+      "name": "Valores vacíos",
+      "description": "Debe ser \"\"."
+    },
+    {
+      "id": 2276144,
+      "name": "Valores máximos",
+      "description": "Proporcionar los valores mínimo y máximo permitidos exactos para campos numéricos o de fecha."
+    },
+    {
+      "id": 2276145,
+      "name": "Valores mínimos",
+      "description": "Proporcionar los valores mínimo y máximo permitidos exactos para campos numéricos o de fecha."
+    },
+    {
+      "id": 2276146,
+      "name": "Desbordamiento",
+      "description": "Proporcionar valores justo más allá de los límites mínimo o máximo permitidos."
+    },
+    {
+      "id": 2276147,
+      "name": "Subdesbordamiento",
+      "description": "Proporcionar valores justo más allá de los límites mínimo o máximo permitidos."
+    },
+    {
+      "id": 2276148,
+      "name": "Cadenas demasiado largas",
+      "description": "Proporcionar cadenas más largas que la longitud máxima permitida, o más cortas que la longitud mínima requerida."
+    },
+    {
+      "id": 2276149,
+      "name": "Cadenas demasiado cortas",
+      "description": "Proporcionar cadenas más largas que la longitud máxima permitida, o más cortas que la longitud mínima requerida."
+    },
+    {
+      "id": 2276150,
+      "name": "Autorización a nivel de objeto rota",
+      "description": "Los usuarios acceden o manipulan objetos de datos sin la autorización adecuada."
+    },
+    {
+      "id": 2276151,
+      "name": "Control de acceso",
+      "description": "Restringir los recursos y acciones a los que los usuarios pueden acceder según roles, permisos o atributos."
+    },
+    {
+      "id": 2276152,
+      "name": "Fallos de autenticación",
+      "description": "La autenticación es débil, está mal configurada o se evita, permitiendo acceso no autorizado."
+    },
+    {
+      "id": 2276153,
+      "name": "Inyección SQL",
+      "description": "Insertar código SQL malicioso en entradas para probar vulnerabilidades de inyección SQL."
+    },
+    {
+      "id": 2276154,
+      "name": "Inyección XSS",
+      "description": "Inyectar JavaScript o etiquetas HTML para probar vulnerabilidades de XSS."
+    },
+    {
+      "id": 2276155,
+      "name": "Entrada fuzz",
+      "description": "Enviar cargas útiles grandes o generadas aleatoriamente para probar validación de entrada y estabilidad."
+    },
+    {
+      "id": 2276156,
+      "name": "Inyección de comandos",
+      "description": "Insertar comandos de shell en entradas para probar vulnerabilidades de ejecución de comandos."
+    },
+    {
+      "id": 2276157,
+      "name": "Inyección JSON",
+      "description": "Insertar estructuras JSON maliciosas o inesperadas para probar el análisis y validación."
+    },
+    {
+      "id": 2276158,
+      "name": "Inyección NoSQL",
+      "description": "Proporcionar consultas u operadores específicos de NoSQL para probar inyección."
+    },
+    {
+      "id": 2276159,
+      "name": "Otros",
+      "description": "Casos no clasificados en categorías existentes."
+    }
+  ],
+  "projectAssociations": [],
+  "moduleSettings": [
+    {
+      "id": "1024283",
+      "name": "Módulo predeterminado",
+      "description": "",
+      "moduleVariables": [],
+      "openApiInfo": {}
+    }
+  ]
+}
